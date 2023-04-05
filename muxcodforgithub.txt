@@ -1,0 +1,22 @@
+
+//mux code
+`timescale 1ns / 1ps
+
+
+module mux( muxin,muxsel,out
+
+    );
+     input  [3:0] muxin;
+     input [1:0] muxsel;
+     output  reg out;    
+
+    always@ (muxin,muxsel)begin
+    case (muxsel)
+    2'b00: out=muxin[0];  
+    2'b01: out=muxin[1];  
+    2'b10: out=muxin[2];  
+    2'b11: out=muxin[3];  
+    endcase
+    end
+  
+endmodule
